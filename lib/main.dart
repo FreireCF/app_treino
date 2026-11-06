@@ -1,55 +1,31 @@
 import 'package:flutter/material.dart';
 
-import 'models/muscle_group_model.dart';
-import 'screens/muscle_group_screen.dart';
+import 'screens/login_screen.dart';
 
-void main() => runApp(const PreviewApp());
+void main() {
+  runApp(const FitDashboardApp());
+}
 
-const grupos = [
-  MuscleGroup(
-    name: 'Peito',
-    exerciseCount: 6,
-    iconPath: 'assets/icons/peito.svg',
-  ),
-  MuscleGroup(
-    name: 'Costas',
-    exerciseCount: 7,
-    iconPath: 'assets/icons/costas.svg',
-  ),
-  MuscleGroup(
-    name: 'Pernas',
-    exerciseCount: 8,
-    iconPath: 'assets/icons/pernas.svg',
-  ),
-  MuscleGroup(
-    name: 'Ombros',
-    exerciseCount: 5,
-    iconPath: 'assets/icons/ombros.svg',
-  ),
-  MuscleGroup(
-    name: 'Bíceps',
-    exerciseCount: 4,
-    iconPath: 'assets/icons/biceps.svg',
-  ),
-  MuscleGroup(
-    name: 'Tríceps',
-    exerciseCount: 1,
-    iconPath: 'assets/icons/triceps.svg',
-  ),
-];
-
-class PreviewApp extends StatelessWidget {
-  const PreviewApp({super.key});
+class FitDashboardApp extends StatelessWidget {
+  const FitDashboardApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const blue = Color(0xFF1683F8);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
-      home: MuscleGroupsScreen(
-        groups: grupos,
-        onGroupTap: (g) => debugPrint('Abrir ${g.name}'),
+      title: 'Appname',
+      theme: ThemeData(
+        useMaterial3: true,
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: blue,
+          primary: blue,
+          surface: Colors.white,
+        ),
       ),
+      home: const LoginScreen(),
     );
   }
 }
