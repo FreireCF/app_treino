@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
+import '../core/widgets/button_default.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -90,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
-                            'app\nlogo',
+                            'Bee\nFit',
                             style: theme.textTheme.headlineMedium?.copyWith(
                               fontWeight: FontWeight.w700,
                               height: 1.1,
@@ -190,26 +191,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
 
               // Parte fixa embaixo
-              SizedBox(
-                width: double.infinity,
-                height: 54,
-                child: ElevatedButton(
-                  onPressed: _login,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: _blue,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    textStyle: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  child: const Text('Entrar'),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ButtonDefault(text: 'Entrar', onPressed: _login),
                 ),
               ),
-              const SizedBox(height: 12),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
