@@ -1,3 +1,4 @@
+import 'package:app_treino/core/widgets/button_default.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
@@ -50,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Appname',
+                  'BeeFit',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
 
@@ -78,12 +79,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: 24),
 
-                SizedBox(
-                  width: double.infinity,
-                  height: 48,
-                  child: ElevatedButton(
-                    onPressed: _login,
-                    child: const Text('Login'),
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ButtonDefault(text: 'Login', onPressed: _login),
                   ),
                 ),
               ],
